@@ -17,7 +17,7 @@
             </header>
     
             <main>
-                <ul>
+                <ul v-show="emailList.length === 10">
                     <li v-for="email in emailList">
                         {{email}}
                     </li>
