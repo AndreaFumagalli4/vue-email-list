@@ -18,13 +18,12 @@
     
             <main>
                 <ul>
-                    <li>
-                        {{newMail}}
+                    <li v-for="email in emailList">
+                        {{email}}
                     </li>
                 </ul>
             </main>
         </div>
-        
         
         <!-- JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>

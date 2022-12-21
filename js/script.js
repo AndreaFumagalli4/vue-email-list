@@ -3,19 +3,21 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            newMail : '',
+            emailList : [],
         }
     },
     methods : {
         getNewMail () {
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then((response) => {
-                console.log(response.data.response);
-                this.newMail = response.data.response;
-            })
-            .catch((error) => {
-                console.warn(error);
-            })
+            for(let i = 0; i < 10; i++) {
+                axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+                .then((response) => {
+                    console.log(response.data.response);
+                    this.emailList.push(response.data.response);
+                })
+                .catch((error) => {
+                    console.warn(error);
+                })
+            }   
         }
     },
 
